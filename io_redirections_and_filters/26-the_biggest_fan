@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "Correct output - 1\nCorrect output - 2\nCorrect output - 3\n"
+cat file2.tsv file3.tsv
