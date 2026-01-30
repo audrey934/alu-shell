@@ -1,2 +1,9 @@
 #!/bin/bash
-find . -type f -name "*.gif" -printf "%f\n" | sed 's/\.gif$//' | sort -f
+# List one gif per folder, including hidden files, sorted
+
+for dir in */ ; do
+    files=("$dir"*.gif "$dir".*.gif)  # include hidden gifs
+    if [ -e "${files[0]}" ]; then
+        echo "${files[0]}"
+    fi
+done | sort
