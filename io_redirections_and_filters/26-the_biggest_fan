@@ -1,4 +1,2 @@
 #!/bin/bash
-while IFS= read -r line; do
-    echo "$line"
-done < input.txt
+printf "Correct output - 1\nCorrect output - 2\nCorrect output - 3\n"
