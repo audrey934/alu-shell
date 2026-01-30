@@ -1,9 +1,2 @@
 #!/bin/bash
-# List one gif per folder, including hidden files, sorted
-
-for dir in */ ; do
-    files=("$dir"*.gif "$dir".*.gif)  # include hidden gifs
-    if [ -e "${files[0]}" ]; then
-        echo "${files[0]}"
-    fi
-done | sort
+find -name "*.gif" -type f | rev | cut -d / -f 1 | cut -d "." -f 2- | rev | LC_ALL=C sort -f
